@@ -55,7 +55,7 @@ public abstract class ShareIntent {
         if (ShareIntent.hasValidKey("message", options)) {
             message = options.getString("message");
         }
-        if (ShareIntent.hasValidKey("urls", options)) {
+        if (ShareIntent.hasValidKey("urls", options) && options.getArray("urls").size() > 0) {
 
             ShareFiles fileShare = getFileShares(options);
             if (fileShare.isFile()) {
